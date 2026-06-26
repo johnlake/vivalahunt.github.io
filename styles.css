@@ -73,13 +73,14 @@ img {
 .image-placeholder {
   width: 74%;
   aspect-ratio: 2 / 1;
-  /* border: 2px dashed rgba(255, 255, 255, 0.35); */
-  background: rgba(255,255,255,0.3);
+  /* background: rgba(255,255,255,0.3); */
   justify-self: center;
   align-self: center;
   border-radius: 1rem;
   overflow: hidden;
   object-fit: contain;
+  /* border: 3px solid rgba(255, 255, 255, 0.85); */
+  /* box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35); */
 }
 
 .content-stack {
@@ -95,6 +96,17 @@ img {
   align-items: center;
   text-align: center;
   margin-top: 1rem;
+  opacity: 0;
+  animation: fadeInText 2s ease forwards;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .login-line,
@@ -106,14 +118,14 @@ img {
 
 .login-line {
   font-size: 3.35rem;
-  margin-bottom: -2rem;
+  margin-bottom: -1.5rem;
 }
 
 .play-button {
   background: none;
   border: none;
   padding: 0;
-  color: #1e40af;
+  color: #9babdf;
   font: inherit;
   font-size: inherit;
   cursor: pointer;
@@ -140,22 +152,6 @@ img {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-
-@media (max-width: 600px) {
-  .image-placeholder {
-    width: 100%;
-  }
-
-  .login-line {
-    font-size: 1.4rem;
-    margin-bottom: -0.4rem;
-  }
-
-  .warning-line {
-    font-size: 1rem;
-  }
-}
-
 @media (max-width: 1080px) {
   .content-card {
     width: 100%;
@@ -164,10 +160,26 @@ img {
   }
 
   .login-line {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .warning-line {
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-placeholder {
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  .login-line {
+    font-size: 2rem;
+    margin-bottom: -0.4rem;
+  }
+
+  .warning-line {
+    font-size: 1rem;
   }
 }
